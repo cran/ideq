@@ -4,9 +4,16 @@
 \alias{dstm_eof}
 \title{Dynamic spatio-temporal model with EOFs}
 \usage{
-dstm_eof(Y, proc_model = "Dense", P = 4L, proc_error = "IW",
-  n_samples = 1L, sample_sigma2 = TRUE, verbose = FALSE,
-  params = NULL)
+dstm_eof(
+  Y,
+  proc_model = "Dense",
+  P = 4L,
+  proc_error = "IW",
+  n_samples = 1L,
+  sample_sigma2 = TRUE,
+  verbose = FALSE,
+  params = NULL
+)
 }
 \arguments{
 \item{Y}{(numeric matrix) S by T data matrix containing the response variable
@@ -113,26 +120,22 @@ dstm_eof(ide_standard, proc_model="Dense") # Dense process matrix
 
 # Specify hyperparameters
 P <- 4
-dstm_eof(ide_standard, sample_sigma2=FALSE, proc_error="Discount", P=P,
-         params=list(sigma2=0.01, alpha_lambda=201, beta_lambda=20))
-         
 dstm_eof(ide_standard, P=P,
          params=list(m_0=rep(1, P), C_0=diag(0.01, P),
                      scale_W=diag(P), df_W=100))
 }
 \references{
 Cressie, N., and Wikle, C. K. (2011), Statistics for spatio-temporal data,
-New York: John Wiley and Sons. ISBN-13: 978-0471692744.
+John Wiley and Sons, New York, ISBN:978-0471692744.
 
 Fruhwirth-Schnatter, S. (1994), 
 \dQuote{Data Augmentation and Dynamic Linear Models,}
-Journal of Time Series Analysis, 15, 183–202.
-<doi:10.1111/j.1467-9892.1994.tb00184.x>
+Journal of Time Series Analysis, 15, 183–202,
+<doi:10.1111/j.1467-9892.1994.tb00184.x>.
 
 Petris, G., Petrone, S., and Campagnoli, P. (2009), 
-Dynamic Linear Models with R, useR!, Springer-Verlag, New York. 
-ISBN-13: 978-0387772370.
-<doi:10.1007/ b135794>.
+Dynamic Linear Models with R, useR!, Springer-Verlag, New York,
+ISBN:978-0387772370, <doi:10.1007/b135794>.
 }
 \seealso{
 [dstm_ide]

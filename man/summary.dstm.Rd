@@ -4,8 +4,7 @@
 \alias{summary.dstm}
 \title{Summary Method for DSTM Fits}
 \usage{
-\method{summary}{dstm}(object, object_name = deparse(substitute(object)),
-  ...)
+\method{summary}{dstm}(object, object_name = deparse(substitute(object)), ...)
 }
 \arguments{
 \item{object}{A `dstm` object}

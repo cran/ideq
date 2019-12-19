@@ -4,8 +4,15 @@
 \alias{predict.dstm}
 \title{Predict Method for DSTM Fits}
 \usage{
-\method{predict}{dstm}(object, K = 1, only_K = FALSE,
-  return_ys = TRUE, return_thetas = FALSE, burnin = NULL, ...)
+\method{predict}{dstm}(
+  object,
+  K = 1,
+  only_K = FALSE,
+  return_ys = TRUE,
+  return_thetas = FALSE,
+  burnin = NULL,
+  ...
+)
 }
 \arguments{
 \item{object}{A `dstm` object}

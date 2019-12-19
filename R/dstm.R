@@ -121,9 +121,6 @@
 #' 
 #' # Specify hyperparameters
 #' P <- 4
-#' dstm_eof(ide_standard, sample_sigma2=FALSE, proc_error="Discount", P=P,
-#'          params=list(sigma2=0.01, alpha_lambda=201, beta_lambda=20))
-#'          
 #' dstm_eof(ide_standard, P=P,
 #'          params=list(m_0=rep(1, P), C_0=diag(0.01, P),
 #'                      scale_W=diag(P), df_W=100))
@@ -388,8 +385,8 @@ dstm_ide <- function(Y, locs=NULL, knot_locs=NULL, proc_error = "IW", J=1L,
   
   # Error checking for J, L, locs, knot_locs
   if (is.null(locs)) stop("locs must be specified for IDE models")
-  if (class(locs) == "data.frame") locs <- as.matrix(locs)
-  if (class(locs) != "matrix") stop("locs must be data.frame or matrix")
+  if ("data.frame" %in% class(locs)) locs <- as.matrix(locs)
+  if (! "matrix" %in% class(locs)) stop("locs must be data.frame or matrix")
   if (ncol(locs) != 2) stop("locs must have 2 columns")
 
   J <- as.integer(J)
